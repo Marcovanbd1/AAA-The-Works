@@ -1,313 +1,300 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Neighbourhood infrastructure</title>
-  <meta name="description" content="A simple, concrete pattern of civic capabilities that Places can build to listen earlier, guide better, and maintain continuity under prolonged strain." />
-
-  <style>
-    :root{
-      --text:#0f172a;
-      --muted:#475569;
-      --bg:#ffffff;
-      --line:#e5e7eb;
-      --accent:#2563eb;
-    }
-
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
-      line-height:1.65;
-    }
-
-    main{
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 4rem 1.25rem 6rem;
-    }
-
-    header{
-      margin-bottom:4rem;
-    }
-
-    h1{
-      font-size:2.25rem;
-      font-weight:650;
-      letter-spacing:-0.02em;
-      margin:0 0 1rem 0;
-    }
-
-    h2{
-      font-size:1.4rem;
-      margin:4rem 0 1rem 0;
-      font-weight:650;
-    }
-
-    p{
-      margin:0 0 1.25rem 0;
-    }
-
-    .intro{
-      font-size:1.05rem;
-      color:var(--muted);
-    }
-
-    .section{
-      border-top:1px solid var(--line);
-      padding-top:3rem;
-    }
-
-    .label{
-      font-size:0.85rem;
-      text-transform:uppercase;
-      letter-spacing:0.08em;
-      color:var(--muted);
-      margin-bottom:0.5rem;
-    }
-
-    .callout{
-      margin-top:1.5rem;
-      padding-left:1rem;
-      border-left:3px solid var(--line);
-      color:var(--muted);
-    }
-
-    .quiet-link{
-      font-size:0.95rem;
-      color:var(--muted);
-      margin-top:1rem;
-    }
-
-    footer{
-      margin-top:5rem;
-      padding-top:2.5rem;
-      border-top:1px solid var(--line);
-      font-size:0.95rem;
-      color:var(--muted);
-    }
-
-    a{
-      color:var(--accent);
-      text-decoration:none;
-    }
-
-    a:hover{
-      text-decoration:underline;
-    }
-
-    strong{
-      color:var(--text);
-      font-weight:650;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighbourhood CoLab — Applied intelligence for complex human systems</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 24px 120px;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 1.4em;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin: 64px 0 24px 0;
+            line-height: 1.3;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            color: #5a6c7d;
+            margin-bottom: 48px;
+            font-weight: 400;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+        
+        .intro {
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: #1a1a1a;
+            display: block;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 16px 0 24px 0;
+            padding: 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 1.05em;
+        }
+        
+        li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #7f8c8d;
+        }
+        
+        .divider {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 64px 0;
+        }
+        
+        a {
+            color: #2c3e50;
+            text-decoration: none;
+            border-bottom: 1px solid #cbd5e0;
+            transition: border-color 0.2s;
+        }
+        
+        a:hover {
+            border-bottom-color: #2c3e50;
+        }
+        
+        .contact {
+            margin-top: 48px;
+            font-size: 1.05em;
+        }
+        
+        .contact p {
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            margin-top: 32px;
+            font-size: 0.95em;
+            color: #7f8c8d;
+        }
+        
+        .back-to-top {
+            text-align: center;
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .back-to-top a {
+            color: #7f8c8d;
+            text-decoration: none;
+            border: none;
+            font-size: 0.95em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+        }
+        
+        .back-to-top a:hover {
+            color: #2c3e50;
+        }
+        
+        .arrow {
+            display: inline-block;
+            font-size: 1.2em;
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 40px 20px 80px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.25em;
+                margin-top: 48px;
+            }
+            
+            .subtitle {
+                font-size: 1.15em;
+            }
+        }
+    </style>
 </head>
-
 <body>
-<main>
-
-<header>
-  <h1>Neighbourhood infrastructure</h1>
-
-  <p class="intro">
-    This page sets out a simple pattern of civic capabilities that neighbourhoods and Places can deliberately build.
-    It’s designed for leaders responsible for neighbourhood working, Place-based partnerships, population health, and continuity.
-  </p>
-
-  <p class="intro">
-    The aim is practical, not theoretical. Help a place notice pressure earlier, respond more humanly, and keep functioning when strain lasts.
-    No procurement. No platform. No dependency on an external vendor. Your neighbourhood builds it with what it already has.
-  </p>
-
-  <p class="intro">
-    This work is shared openly by Neighbourhood CoLab, a deliberately non-commercial, not-for-profit Community Interest Company.
-    Our role is to document the pattern, define clear red lines, and support places that choose to adopt it.
-  </p>
-
-  <p class="intro">
-    If you lead Place work, the question is straightforward.
-    Do you want this infrastructure <strong>for</strong> your neighbourhood.
-  </p>
-</header>
-
-<section class="section">
-  <div class="label">The pattern</div>
-  <h2>A small set of capabilities</h2>
-
-  <p>
-    Neighbourhood infrastructure works best when it’s built in layers, each one making the next possible.
-    The layers are simple, but the effect is significant.
-  </p>
-
-  <div class="callout">
-    <p>
-      <strong>1. Anatomy</strong> creates reach and inclusion.<br />
-      <strong>2. Signals</strong> creates early awareness at neighbourhood level.<br />
-      <strong>3. Voice</strong> creates trusted guidance for real people.<br />
-      <strong>4. Resilience</strong> creates continuity under prolonged disruption.
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="label">1. The anatomy</div>
-  <h2>Our Digital Offer</h2>
-
-  <p>
-    A neighbourhood needs more than a single website or front door.
-    It needs a coherent set of everyday digital surfaces that meet people where they already are and reduce the effort needed to find support.
-  </p>
-
-  <p>
-    In practice, this usually means a stable neighbourhood website acting as a civic reference point,
-    plus lightweight entry routes that can be shared quickly in normal life,
-    plus consistent language and structure across partners so people don’t have to relearn the system each time.
-  </p>
-
-  <p>
-    This is about reach, legibility, and inclusion.
-    It sits alongside clinical systems and institutional tools, helping people arrive earlier and through calmer, non-clinical routes.
-  </p>
-
-  <div class="callout">
-    <p>
-      The anatomy is a local choice.
-      It belongs to the neighbourhood, it’s stewarded in the open, and it improves with use.
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="label">2. What emerges</div>
-  <h2>Neighbourhood Signals</h2>
-
-  <p>
-    Once the anatomy exists, a place can begin to notice patterns of pressure building early across many small interactions.
-    This is neighbourhood-level awareness, earned over time.
-  </p>
-
-  <p>
-    Signals are about <strong>patterns</strong>, not people.
-    They help leaders and teams spot where confusion, friction, and unmet need are rising, before that pressure hardens into demand.
-  </p>
-
-  <p>
-    Neighbourhood Signals are not installed, purchased, or owned.
-    They emerge when a place chooses to listen with restraint and with explicit governance about what is seen, shared, and acted upon.
-  </p>
-
-  <div class="callout">
-    <p>
-      The leadership value is simple.
-      You get lived operational relief, not data theatre.
-    </p>
-  </div>
-
-  <p class="quiet-link">
-    A fuller explanation of Neighbourhood Signals lives
-    <a href="https://neighbourhoodsignals.netlify.app/" target="_blank" rel="noopener">here</a>.
-  </p>
-</section>
-
-<section class="section">
-  <div class="label">3. The voice</div>
-  <h2>Support Playlists</h2>
-
-  <p>
-    Support Playlists are what people experience directly.
-    Someone says what’s going on, in their own words, and receives a short, safe, non-clinical set of approved support options.
-  </p>
-
-  <p>
-    The point is guidance without judgement.
-    A next step that’s realistic, local where possible, and easy to share.
-  </p>
-
-  <p>
-    Support Playlists can sit inside a full neighbourhood anatomy, or within a credible INT-style website,
-    as long as clear red lines are respected.
-  </p>
-
-  <div class="callout">
-    <p>
-      Support Playlists are a voice.
-      On their own they are not neighbourhood intelligence, and they do not replace clinical care.
-    </p>
-  </div>
-
-  <p class="quiet-link">
-    A fuller description of Support Playlists, including their red lines, lives
-    <a href="https://supportplaylists-civic.netlify.app/" target="_blank" rel="noopener">here</a>.
-  </p>
-</section>
-
-<section class="section">
-  <div class="label">4. A further civic capability</div>
-  <h2>Neighbourhood Resilience</h2>
-
-  <p>
-    Neighbourhood resilience is about prolonged disruption, when strain lasts and normal routes stop working as expected.
-    Power loss. Connectivity failure. Workforce depletion. System outages. Sustained pressure over days or weeks.
-  </p>
-
-  <p>
-    It asks a simple, unavoidable question.
-    <strong>What continues to function in this neighbourhood if normal routes degrade tomorrow.</strong>
-  </p>
-
-  <p>
-    When a neighbourhood has a shared anatomy, earned awareness through Signals, and trusted guidance via Support Playlists,
-    it can maintain continuity even when digital or institutional conditions are no longer ideal.
-  </p>
-
-  <div class="callout">
-    <p>
-      This is civic continuity under strain.
-      It’s a responsible leadership capability, not an innovation project.
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="label">Adoption</div>
-  <h2>How places get there</h2>
-
-  <p>
-    There’s no rollout sequence or checklist.
-    Places usually begin by building the anatomy, agreeing explicit red lines, and growing capability in the open.
-  </p>
-
-  <p>
-    The point is to build this internally.
-    Neighbourhood CoLab can share patterns, templates, and hard-earned lessons from a place that’s already done it,
-    so you can move faster without losing trust.
-  </p>
-
-  <div class="callout">
-    <p>
-      If you’re leading Place work and you want this infrastructure for your neighbourhood,
-      get in touch and we’ll share what’s transferable, what isn’t, and what good stewardship looks like from day one.
-    </p>
-  </div>
-</section>
-
-<footer>
-  <p>
-    Neighbourhood CoLab is a not-for-profit Community Interest Company.
-    This work is shared openly so Places can adopt it without procurement and without vendor dependency.
-  </p>
-
-  <p>
-    Mark Winterburn<br />
-    Neighbourhood CoLab<br />
-    <a href="mailto:hello@neighbourhoodcolab.co.uk">hello@neighbourhoodcolab.co.uk</a>
-  </p>
-</footer>
-
-</main>
+    <div class="container">
+        <h1>Neighbourhood CoLab</h1>
+        <div class="subtitle">Applied intelligence for complex human systems</div>
+        
+        <p class="intro">Neighbourhood CoLab is a Community Interest Company that helps organisations understand and improve how they function under operational pressure.</p>
+        
+        <p class="intro">We work where complexity, human judgement, and safety stakes meet—in healthcare systems, aviation environments, defence operations, public services, and safety-critical organisations.</p>
+        
+        <p class="intro">Our method combines modern AI capability with deep frontline expertise to identify friction, strengthen decision environments, and improve how people interact with the systems they depend on.</p>
+        
+        <hr class="divider">
+        
+        <h2>What we do</h2>
+        
+        <p>We provide applied intelligence capability for complex operational environments.</p>
+        
+        <p>This means:</p>
+        
+        <strong>Rapid domain understanding</strong>
+        <p>Learning how your organisation actually functions. Mapping workflows, pressure points, and behavioural patterns quickly.</p>
+        
+        <strong>Friction identification</strong>
+        <p>Locating operational bottlenecks, knowledge gaps, and decision challenges that persist because institutional structures resist change.</p>
+        
+        <strong>Human-system redesign</strong>
+        <p>Improving interaction between people and processes. Strengthening decision environments. Simplifying complexity without losing safety.</p>
+        
+        <strong>AI-enabled capability</strong>
+        <p>Applying modern AI tools responsibly to improve knowledge capture, enhance operational understanding, and support organisational learning.</p>
+        
+        <strong>Cultural adoption</strong>
+        <p>Ensuring improvements persist. Supporting teams to integrate new capability and change behaviour.</p>
+        
+        <p>The focus is operational improvement, not theoretical transformation.</p>
+        
+        <hr class="divider">
+        
+        <h2>Where we work</h2>
+        
+        <p>We work across sectors where complex human systems exist:</p>
+        
+        <ul>
+            <li>Healthcare and primary care networks</li>
+            <li>Aviation training and operations</li>
+            <li>Defence environments</li>
+            <li>Public sector services</li>
+            <li>Safety-critical organisations</li>
+            <li>Complex institutional systems</li>
+        </ul>
+        
+        <p>Our early work focused on neighbourhood health infrastructure. That taught us how to observe pressure, understand behaviour, remove friction, and strengthen systems.</p>
+        
+        <p>Healthcare provided an ideal proving ground—highly complex, safety-critical, behaviour-dependent, operationally constrained, socially embedded.</p>
+        
+        <p>The method we developed there generalises. Structural friction, operational pressure, knowledge bottlenecks, and institutional inertia exist everywhere. So does the need for safer, more human-centred systems.</p>
+        
+        <hr class="divider">
+        
+        <h2>Why we're structured as we are</h2>
+        
+        <p>Neighbourhood CoLab is deliberately a Community Interest Company.</p>
+        
+        <p>The CIC structure enables:</p>
+        
+        <strong>Agility</strong>
+        <p>Lightweight engagement. Minimal procurement friction. Rapid experimentation. Faster learning cycles.</p>
+        
+        <strong>Independence</strong>
+        <p>No vendor lock-in. No product sales incentives. No platform dependency. Neutral advisory position.</p>
+        
+        <strong>Public benefit orientation</strong>
+        <p>Work prioritises system improvement rather than commercial extraction. Outcomes focus on people and environments.</p>
+        
+        <strong>Trust in sensitive contexts</strong>
+        <p>The structure supports work in safety-critical or vulnerable environments where commercial incentives would create conflict.</p>
+        
+        <hr class="divider">
+        
+        <h2>Who we are</h2>
+        
+        <p>The organisation is grounded in deep frontline experience:</p>
+        
+        <ul>
+            <li>Lucy — nurse, 30 years NHS experience</li>
+            <li>Bruce — clinical psychologist, 30 years NHS experience</li>
+            <li>Justin — social worker, 30 years local government experience</li>
+            <li>And Mark — who does something involving applied philosophy, systems thinking, and making AI work safely in human environments</li>
+        </ul>
+        
+        <p>We've all known each other since childhood. This combination ensures technology is applied responsibly, human behaviour is understood, complex social environments are navigated safely, and operational change reflects real-world practice.</p>
+        
+        <hr class="divider">
+        
+        <h2>Core principles</h2>
+        
+        <strong>Systems exist around people</strong>
+        <p>People live in neighbourhoods. People work in organisations. People interact with institutions. Healthcare systems, aviation operations, businesses, and public services all form part of the same human system ecology. Improving how any of these systems function strengthens the broader environment in which people live.</p>
+        
+        <strong>Structural friction creates real-world outcomes</strong>
+        <p>Most organisations contain visible operational friction that persists because institutional structures resist change, expertise becomes siloed, incentives maintain existing processes, and knowledge is difficult to transfer. We exist to help organisations identify and remove this friction.</p>
+        
+        <strong>Intelligence is now portable</strong>
+        <p>Modern AI has changed the economics of understanding. It enables rapid domain learning, fast process analysis, knowledge capture, cross-sector translation of insight, and accelerated experimentation. This allows a consistent method to be applied across different domains.</p>
+        
+        <strong>Safety and human experience come first</strong>
+        <p>We prioritise human wellbeing, safe interpretation of situations, responsible application of technology, understanding of vulnerability, and real-world operational risk. Technology is always subordinate to human impact.</p>
+        
+        <hr class="divider">
+        
+        <h2>How to engage</h2>
+        
+        <p>If you're leading complex operations and this approach seems relevant to your environment, get in touch.</p>
+        
+        <div class="contact">
+            <p><a href="mailto:hello@neighbourhoodcolab.co.uk">hello@neighbourhoodcolab.co.uk</a></p>
+            <p>Mark Winterburn</p>
+        </div>
+        
+        <div class="footer">
+            <p>Neighbourhood CoLab</p>
+            <p>Community Interest Company</p>
+        </div>
+        
+        <div class="back-to-top">
+            <a href="#"><span class="arrow">↑</span> Back to top</a>
+        </div>
+    </div>
 </body>
 </html>
