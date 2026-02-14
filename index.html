@@ -5,313 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neighbourhood CoLab — Applied intelligence for complex human systems</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell',sans-serif;
+            line-height:1.7;color:#2c3e50;background:#ffffff;
         }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            line-height: 1.7;
-            color: #2c3e50;
-            background: #ffffff;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 60px 24px 120px;
-        }
-        
-        h1 {
-            font-size: 2.2em;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 12px;
-            line-height: 1.2;
-        }
-        
-        h2 {
-            font-size: 1.4em;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin: 64px 0 24px 0;
-            line-height: 1.3;
-        }
-        
-        .subtitle {
-            font-size: 1.3em;
-            color: #5a6c7d;
-            margin-bottom: 48px;
-            font-weight: 400;
-        }
-        
-        p {
-            margin-bottom: 20px;
-            font-size: 1.05em;
-        }
-        
-        .intro {
-            font-size: 1.1em;
-            color: #2c3e50;
-            margin-bottom: 32px;
-            line-height: 1.8;
-        }
-        
-        strong {
-            font-weight: 600;
-            color: #1a1a1a;
-            display: block;
-            margin-top: 24px;
-            margin-bottom: 8px;
-        }
-        
-        ul {
-            list-style: none;
-            margin: 16px 0 24px 0;
-            padding: 0;
-        }
-        
-        li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-            font-size: 1.05em;
-        }
-        
-        li:before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: #7f8c8d;
-        }
-        
-        .divider {
-            border: none;
-            border-top: 1px solid #e0e0e0;
-            margin: 64px 0;
-        }
-        
-        a {
-            color: #2c3e50;
-            text-decoration: none;
-            border-bottom: 1px solid #cbd5e0;
-            transition: border-color 0.2s;
-        }
-        
-        a:hover {
-            border-bottom-color: #2c3e50;
-        }
-        
-        .contact {
-            margin-top: 48px;
-            font-size: 1.05em;
-        }
-        
-        .contact p {
-            margin-bottom: 8px;
-        }
-        
-        .footer {
-            margin-top: 32px;
-            font-size: 0.95em;
-            color: #7f8c8d;
-        }
-        
-        .back-to-top {
-            text-align: center;
-            margin-top: 64px;
-            padding-top: 32px;
-            border-top: 1px solid #e0e0e0;
-        }
-        
-        .back-to-top a {
-            color: #7f8c8d;
-            text-decoration: none;
-            border: none;
-            font-size: 0.95em;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.2s;
-        }
-        
-        .back-to-top a:hover {
-            color: #2c3e50;
-        }
-        
-        .arrow {
-            display: inline-block;
-            font-size: 1.2em;
-        }
-        
-        @media (max-width: 640px) {
-            .container {
-                padding: 40px 20px 80px;
-            }
-            
-            h1 {
-                font-size: 1.8em;
-            }
-            
-            h2 {
-                font-size: 1.25em;
-                margin-top: 48px;
-            }
-            
-            .subtitle {
-                font-size: 1.15em;
-            }
+        .container{max-width:680px;margin:0 auto;padding:60px 24px 120px;}
+        h1{font-size:2.2em;font-weight:600;color:#1a1a1a;margin-bottom:12px;line-height:1.2;}
+        h2{font-size:1.4em;font-weight:500;color:#1a1a1a;margin:64px 0 24px;line-height:1.3;}
+        .subtitle{font-size:1.3em;color:#5a6c7d;margin-bottom:48px;}
+        p{margin-bottom:20px;font-size:1.05em;}
+        .intro{font-size:1.1em;margin-bottom:32px;}
+        strong{font-weight:600;color:#1a1a1a;display:block;margin-top:24px;margin-bottom:8px;}
+        ul{list-style:none;margin:16px 0 24px;padding:0;}
+        li{margin-bottom:8px;padding-left:20px;position:relative;font-size:1.05em;}
+        li:before{content:"—";position:absolute;left:0;color:#7f8c8d;}
+        .divider{border:none;border-top:1px solid #e0e0e0;margin:64px 0;}
+        a{color:#2c3e50;text-decoration:none;border-bottom:1px solid #cbd5e0;}
+        a:hover{border-bottom-color:#2c3e50;}
+        .contact{margin-top:48px;font-size:1.05em;}
+        .footer{margin-top:32px;font-size:.95em;color:#7f8c8d;}
+        .back-to-top{text-align:center;margin-top:64px;padding-top:32px;border-top:1px solid #e0e0e0;}
+        .back-to-top a{color:#7f8c8d;border:none;font-size:.95em;}
+        .back-to-top a:hover{color:#2c3e50;}
+        @media (max-width:640px){
+            .container{padding:40px 20px 80px;}
+            h1{font-size:1.8em;}
+            h2{font-size:1.25em;margin-top:48px;}
+            .subtitle{font-size:1.15em;}
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Neighbourhood CoLab</h1>
+<div class="container">
 
-        <p class="intro">Built on the principle that systems only work when they can accurately understand the people inside them.</p>
+<h1>Neighbourhood CoLab</h1>
 
-        <div class="subtitle">Applied intelligence for complex human systems</div>
-        
-        <p class="intro"><strong>We help organisations understand why capable people inside complex systems still struggle to get the right outcomes.</strong></p>
-        
-        <p class="intro">Neighbourhood CoLab is a Community Interest Company that helps organisations understand and improve how they function under operational pressure.</p>
-        
-        <p class="intro">We work where complexity, human judgement, and safety stakes meet—in healthcare systems, aviation environments, defence operations, public services, and safety-critical organisations.</p>
-        
-        <p class="intro">Our method combines modern AI capability with deep frontline expertise to identify friction, strengthen decision environments, and improve how people interact with the systems they depend on.</p>
+<p class="intro">Built on the principle that systems only work when they can accurately understand the people inside them.</p>
 
-        <h2>Where this approach comes from</h2>
+<div class="subtitle">Applied intelligence for complex human systems</div>
 
-        <p>Neighbourhood CoLab grew out of a pattern we kept seeing across different sectors: systems failing not because people didn’t care, but because the system couldn’t accurately understand what was happening in front of it.</p>
+<p class="intro"><strong>We help organisations understand why capable people still get the wrong outcomes inside complex systems.</strong></p>
 
-        <p>We work with organisations to identify and fix these interpretation gaps — the structural layer that determines whether systems respond to real situations or to simplified versions of them.</p>
-        
-        <hr class="divider">
-        
-        <h2>What we do</h2>
-        
-        <p>We provide applied intelligence capability for complex operational environments.</p>
-        
-        <p>This means:</p>
-        
-        <strong>Rapid domain understanding</strong>
-        <p>Learning how your organisation actually functions. Mapping workflows, pressure points, and behavioural patterns quickly.</p>
-        
-        <strong>Friction identification</strong>
-        <p>Locating operational bottlenecks, knowledge gaps, and decision challenges that persist because institutional structures resist change.</p>
-        
-        <strong>Human-system redesign</strong>
-        <p>Improving interaction between people and processes. Strengthening decision environments. Simplifying complexity without losing safety.</p>
-        
-        <strong>AI-enabled capability</strong>
-        <p>Applying modern AI tools responsibly to improve knowledge capture, enhance operational understanding, and support organisational learning.</p>
-        
-        <strong>Cultural adoption</strong>
-        <p>Ensuring improvements persist. Supporting teams to integrate new capability and change behaviour.</p>
-        
-        <p>The focus is operational improvement, not theoretical transformation.</p>
-        
-        <hr class="divider">
-        
-        <h2>Where we work</h2>
-        
-        <p>We work across sectors where complex human systems exist:</p>
-        
-        <ul>
-            <li>Healthcare and primary care networks</li>
-            <li>Aviation training and operations</li>
-            <li>Defence environments</li>
-            <li>Public sector services</li>
-            <li>Safety-critical organisations</li>
-            <li>Complex institutional systems</li>
-        </ul>
-        
-        <p>Our early work focused on neighbourhood health infrastructure. That taught us how to observe pressure, understand behaviour, remove friction, and strengthen systems.</p>
-        
-        <p>Healthcare provided an ideal proving ground—highly complex, safety-critical, behaviour-dependent, operationally constrained, socially embedded.</p>
-        
-        <p>The method we developed there generalises. Structural friction, operational pressure, knowledge bottlenecks, and institutional inertia exist everywhere. So does the need for safer, more human-centred systems.</p>
-        
-        <hr class="divider">
-        
-        <h2>Why we're structured as we are</h2>
-        
-        <p>Neighbourhood CoLab is deliberately a Community Interest Company.</p>
-        
-        <p>The CIC structure enables:</p>
-        
-        <strong>Agility</strong>
-        <p>Lightweight engagement. Minimal procurement friction. Rapid experimentation. Faster learning cycles.</p>
-        
-        <strong>Independence</strong>
-        <p>No vendor lock-in. No product sales incentives. No platform dependency. Neutral advisory position.</p>
-        
-        <strong>Public benefit orientation</strong>
-        <p>Work prioritises system improvement rather than commercial extraction. Outcomes focus on people and environments.</p>
-        
-        <strong>Trust in sensitive contexts</strong>
-        <p>The structure supports work in safety-critical or vulnerable environments where commercial incentives would create conflict.</p>
-        
-        <hr class="divider">
-        
-        <h2>Who we are</h2>
-        
-        <p>The organisation is grounded in deep frontline experience:</p>
-        
-        <ul>
-            <li>Lucy — nurse, 30 years NHS experience</li>
-            <li>Bruce — clinical psychologist, 30 years NHS experience</li>
-            <li>Justin — social worker, 30 years local government experience</li>
-            <li>Mark — applied philosopher and systems practitioner specialising in how organisations interpret human situations</li>
-        </ul>
-        
-        <p>We've all known each other since childhood. This combination ensures technology is applied responsibly, human behaviour is understood, complex social environments are navigated safely, and operational change reflects real-world practice.</p>
-        
-        <hr class="divider">
-        
-        <h2>Core principles</h2>
-        
-        <strong>Systems exist around people</strong>
-        <p>People live in neighbourhoods. People work in organisations. People interact with institutions. Healthcare systems, aviation operations, businesses, and public services all form part of the same human system ecology. Improving how any of these systems function strengthens the broader environment in which people live.</p>
-        
-        <strong>Structural friction creates real-world outcomes</strong>
-        <p>Most organisations contain visible operational friction that persists because institutional structures resist change, expertise becomes siloed, incentives maintain existing processes, and knowledge is difficult to transfer. We exist to help organisations identify and remove this friction.</p>
-        
-        <strong>Intelligence is now portable</strong>
-        <p>Modern AI has changed the economics of understanding. It enables rapid domain learning, fast process analysis, knowledge capture, cross-sector translation of insight, and accelerated experimentation. This allows a consistent method to be applied across different domains.</p>
-        
-        <strong>Safety and human experience come first</strong>
-        <p>We prioritise human wellbeing, safe interpretation of situations, responsible application of technology, understanding of vulnerability, and real-world operational risk. Technology is always subordinate to human impact.</p>
-        
-        <hr class="divider">
-        
-        <h2>How to engage</h2>
-        
-        <p><strong>If this sounds familiar</strong></p>
+<p class="intro">We work inside high-stakes environments where judgement, complexity, and real-world consequences meet.</p>
 
-        <p>You may be dealing with recurring problems that persist despite effort, goodwill, or policy changes. You may have capable teams inside systems that still produce outcomes no one intended.</p>
+<p class="intro">Our work combines modern AI capability with frontline experience to find friction, strengthen decisions, and improve how systems respond to real situations.</p>
 
-        <p>That’s usually not a people problem. It’s a system-understanding problem.</p>
+<h2>Where this approach comes from</h2>
 
-        <p>If that resonates, we should talk.</p>
-        
-        <div class="contact">
-            <p><a href="mailto:hello@neighbourhoodcolab.co.uk">hello@neighbourhoodcolab.co.uk</a></p>
-            <p>Mark Winterburn</p>
-        </div>
-        
-        <div class="footer">
-            <p>Neighbourhood CoLab</p>
-            <p>Community Interest Company</p>
-        </div>
-        
-        <div class="back-to-top">
-            <a href="#"><span class="arrow">↑</span> Back to top</a>
-        </div>
-    </div>
+<p>We kept seeing the same pattern across sectors: systems failing not because people didn’t care, but because the system couldn’t accurately understand what was happening in front of it.</p>
+
+<p>We help organisations identify and fix those interpretation gaps.</p>
+
+<hr class="divider">
+
+<h2>What we do</h2>
+
+<p>We work quickly to understand how your system actually functions, identify where friction persists, and redesign decision environments so they work in reality, not just on paper.</p>
+
+<hr class="divider">
+
+<h2>Where we work</h2>
+
+<p>We work across sectors where failure has real consequences:</p>
+
+<ul>
+<li>Healthcare</li>
+<li>Aviation</li>
+<li>Public services</li>
+<li>Safety-critical environments</li>
+</ul>
+
+<hr class="divider">
+
+<h2>Why we’re structured this way</h2>
+
+<p>We’re a Community Interest Company so our work stays independent, practical, and focused on system improvement rather than product sales.</p>
+
+<hr class="divider">
+
+<h2>Who we are</h2>
+
+<ul>
+<li>Lucy — nurse (NHS)</li>
+<li>Bruce — clinical psychologist (NHS)</li>
+<li>Justin — social worker (local government)</li>
+<li>Mark — applied philosopher and systems thinker</li>
+</ul>
+
+<p>We’ve known each other since childhood. It means we work with trust and candour.</p>
+
+<hr class="divider">
+
+<h2>How to engage</h2>
+
+<p><strong>If this sounds familiar</strong></p>
+
+<p>You may be dealing with problems that persist despite effort, goodwill, or policy changes. You may have capable teams inside systems that still produce outcomes no one intended.</p>
+
+<p>That’s usually not a people problem. It’s a system-understanding problem.</p>
+
+<p>If you’re seeing this in your organisation, tell me.</p>
+
+<div class="contact">
+<p><a href="mailto:hello@neighbourhoodcolab.co.uk">hello@neighbourhoodcolab.co.uk</a></p>
+<p>Mark Winterburn</p>
+</div>
+
+<div class="footer">
+<p>Neighbourhood CoLab</p>
+<p>Community Interest Company</p>
+</div>
+
+<div class="back-to-top">
+<a href="#">↑ Back to top</a>
+</div>
+
+</div>
 </body>
 </html>
