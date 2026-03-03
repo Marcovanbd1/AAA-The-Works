@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emotional Architecture — Neighbourhood CoLab CIC</title>
+<style>
+
+@media print {
+  body { background: white; margin: 0; }
+  .screen-note { display: none; }
+  .cover { page-break-after: always; min-height: auto; padding-top: 100px; padding-bottom: 100px; }
+  .page-break { page-break-before: always; padding-top: 60px; }
+  .page { box-shadow: none; margin: 0; max-width: 100%; padding: 60px 80px; }
+}
+
+@page {
+  margin: 0;
+  size: A4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #f7f8fa;
+  color: #111;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.screen-note {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.screen-note a {
+  color: #aaa;
+}
+
+.page {
+  max-width: 740px;
+  margin: 32px auto;
+  background: white;
+  padding: 80px 88px;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.08);
+}
+
+/* ── Cover ── */
+
+.cover {
+  min-height: 980px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 5px solid #111;
+}
+
+.cover-org {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #999;
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
+.cover-top { padding-top: 0; }
+
+.cover-type {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-top: 80px;
+  margin-bottom: 18px;
+}
+
+.cover h1 {
+  font-size: 48px;
+  line-height: 1.12;
+  letter-spacing: -1px;
+  margin: 0 0 28px 0;
+  font-weight: 700;
+}
+
+.cover-sub {
+  font-size: 19px;
+  color: #444;
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0;
+}
+
+.cover-bottom {
+  border-top: 1px solid #e2e5e9;
+  padding-top: 28px;
+  padding-bottom: 8px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.cover-author {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 4px 0;
+}
+
+.cover-author-detail {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 20px 0;
+}
+
+.cover-date {
+  font-size: 13px;
+  color: #999;
+  margin: 0;
+}
+
+/* ── Body ── */
+
+.section-label {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-top: 60px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.25;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  margin-top: 44px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 16px 0;
+}
+
+.lede {
+  font-size: 19px;
+  line-height: 1.65;
+  color: #222;
+  border-left: 3px solid #111;
+  padding-left: 24px;
+  margin: 36px 0 36px 0;
+  font-style: italic;
+}
+
+/* ── Dimension cards ── */
+
+.dimensions-intro {
+  margin-bottom: 8px;
+}
+
+.dimension {
+  margin-top: 28px;
+  padding: 28px 32px;
+  background: #f7f8fa;
+  border-radius: 8px;
+  border: 1px solid #e3e6ea;
+}
+
+.dimension-number {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 6px;
+}
+
+.dimension-name {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.dimension p {
+  margin: 10px 0 0 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #333;
+}
+
+.dimension .significance {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #e0e3e7;
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+}
+
+/* ── Pull quote ── */
+
+.pull-quote {
+  margin: 44px 0;
+  padding: 32px 36px;
+  background: #111;
+  color: white;
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* ── Where this applies ── */
+
+.contexts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.context-item {
+  padding: 16px 20px;
+  background: #f7f8fa;
+  border: 1px solid #e3e6ea;
+  border-radius: 8px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ── Literature ── */
+
+.ref {
+  font-size: 13px;
+  color: #666;
+  margin: 8px 0;
+  padding-left: 16px;
+  border-left: 2px solid #e0e3e7;
+  line-height: 1.6;
+}
+
+/* ── Footer ── */
+
+.doc-footer {
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid #e2e5e9;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  color: #999;
+  line-height: 1.7;
+}
+
+.doc-footer a {
+  color: #555;
+  text-decoration: none;
+}
+
+</style>
+</head>
+<body>
+
+<div class="screen-note">
+  To save as PDF: File → Print → Save as PDF &nbsp;|&nbsp; <a href="https://neighbourhoodcolab.co.uk">neighbourhoodcolab.co.uk</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     COVER PAGE
+══════════════════════════════════════════ -->
+
+<div class="page cover">
+
+  <div class="cover-org">Neighbourhood CoLab CIC</div>
+
+  <div class="cover-top">
+    <div class="cover-type">White Paper</div>
+    <h1>Emotional<br>Architecture</h1>
+    <p class="cover-sub">A design discipline for systems that need to understand people, not just process them.</p>
+  </div>
+
+  <div class="cover-bottom">
+    <p class="cover-author">Mark Winterburn</p>
+    <p class="cover-author-detail">Co-Director, Neighbourhood CoLab CIC<br>
+    Digital &amp; Transformation Lead, Weymouth &amp; Portland PCN</p>
+    <p class="cover-date">March 2026 &nbsp;·&nbsp; Version 1.0 &nbsp;·&nbsp; Public Release</p>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 2 — THE ARGUMENT
+══════════════════════════════════════════ -->
+
+<div class="page page-break">
+
+  <div class="section-label">Introduction</div>
+  <h2>The problem with systems that only listen to words</h2>
+
+  <div class="lede">
+    A system that captures what someone says, but not what they mean, has not captured the encounter. It has captured a transcript.
+  </div>
+
+  <p>
+    Most technologies designed to support human decision-making share a common assumption: that the information needed to respond well is contained in what people explicitly say or do. Clinical notes record stated symptoms. Support systems respond to submitted requests. Monitoring tools flag declared events.
+  </p>
+
+  <p>
+    This assumption is not wrong. It is incomplete.
+  </p>
+
+  <p>
+    In practice, the information most relevant to consequential decisions is often not what was said. It is the emotional climate in which something was said. The hesitation before an answer. The late disclosure that arrives only once trust has been established. The absence of a topic that should have been raised. The difference between two people using identical words to mean opposite things.
+  </p>
+
+  <p>
+    Human beings — skilled clinicians, experienced caseworkers, trained operators — read this layer instinctively. They adjust their response not only to content but to context: the tone of a room, the weight behind a silence, the moment when a conversation shifts register.
+  </p>
+
+  <p>
+    Systems do not. Not because the capability cannot be built, but because it has not been treated as a design requirement. Emotional Architecture is the discipline that makes it one.
+  </p>
+
+  <div class="section-label" style="margin-top: 52px;">Definition</div>
+  <h2>What Emotional Architecture is</h2>
+
+  <p>
+    Emotional Architecture (EA) is a design discipline concerned with how systems understand and respond to the emotional and cognitive climate of the people using them — not merely the semantic content of what those people say or do.
+  </p>
+
+  <p>
+    It proceeds from a foundational proposition: that every consequential human encounter has an emotional structure, and that structure is itself information. The emotional state of an encounter determines what a person reveals and withholds; how ambiguity is interpreted; what is acted on; and where risk accumulates undetected.
+  </p>
+
+  <p>
+    A system designed without reference to emotional structure is operating on incomplete information — not because its sensors are inadequate, but because its design question was too narrow.
+  </p>
+
+  <div class="pull-quote">
+    Emotional Architecture does not ask: what did the system detect?<br>
+    It asks: what did the system understand — and what did it miss?
+  </div>
+
+  <p>
+    EA is not a feature, a module, or an add-on. It is a design logic — a set of questions asked before and during the design of any system that requires human judgement, human disclosure, or human response under pressure.
+  </p>
+
+  <p>
+    It was developed by Neighbourhood CoLab CIC through applied practice in community health intelligence, digital triage design, and neighbourhood-level demand shaping, and refined through ongoing clinical oversight from nursing, clinical psychology, and social work.
+  </p>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 3 — THE FIVE DIMENSIONS
+══════════════════════════════════════════ -->
+
+<div class="page page-break">
+
+  <div class="section-label">The Framework</div>
+  <h2>The five dimensions of Emotional Architecture</h2>
+
+  <p class="dimensions-intro">
+    EA is structured around five dimensions. Each identifies a distinct aspect of emotional climate that carries information relevant to how a system should interpret, respond to, or escalate what it encounters. Together they constitute the interpretive layer that precedes — and shapes — any system response.
+  </p>
+
+  <div class="dimension">
+    <div class="dimension-number">Dimension 01</div>
+    <div class="dimension-name">Tone Gradient</div>
+    <p>The emotional register of an encounter — whether anxious, resigned, relieved, hostile, dissociative, or distressed — understood as a gradient that shifts throughout an interaction and interacts with its other dimensions.</p>
+    <p class="significance">Identical words carry different meaning at different points on the gradient. A system that cannot distinguish between "I'm fine" spoken in relief and the same words spoken in emotional shutdown is not processing the encounter — it is processing a surface.</p>
+  </div>
+
+  <div class="dimension">
+    <div class="dimension-number">Dimension 02</div>
+    <div class="dimension-name">Disclosure Readiness</div>
+    <p>The degree to which a person is prepared, at any given moment, to reveal the full nature of their concern. Primary disclosure — what someone leads with — frequently differs from actual concern, which may emerge only once trust has been established.</p>
+    <p class="significance">The final moments of a consultation, a conversation, or an assessment carry disproportionate clinical and operational risk. A system that weights early content as primary is structurally misaligned with how disclosure actually works.</p>
+  </div>
+
+  <div class="dimension">
+    <div class="dimension-number">Dimension 03</div>
+    <div class="dimension-name">Omission Topology</div>
+    <p>The structural pattern of what is not said — which topics are avoided, how direct questions are deflected, where speech becomes vague or terminates — understood as carrying information independent of explicit content.</p>
+    <p class="significance">Omission Topology does not infer withheld content. It maps the pattern of omission as a signal requiring attention — preserving the boundary between interpretive support and unsafe inference.</p>
+  </div>
+
+  <div class="dimension">
+    <div class="dimension-number">Dimension 04</div>
+    <div class="dimension-name">Relational Load</div>
+    <p>The power dynamic, trust relationship, and shared history between the people in an encounter, and how these shape what is communicated explicitly versus what is carried by shared contextual knowledge.</p>
+    <p class="significance">Established relationships produce under-explicit communication that is safe between participants but potentially unsafe for third parties — or for systems that cannot recognise the relational context determining what was said and why.</p>
+  </div>
+
+  <div class="dimension">
+    <div class="dimension-number">Dimension 05</div>
+    <div class="dimension-name">Temporal Pressure</div>
+    <p>The time context and encounter type — first contact, crisis response, routine review, discharge, long-term relationship — and how these determine what information is significant, what response is appropriate, and what the system's role should be.</p>
+    <p class="significance">A system applying uniform processing parameters across all encounter types has failed to account for the structural differences between them. Temporal Pressure makes context-specificity a design requirement, not an afterthought.</p>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 4 — WHERE IT APPLIES + LITERATURE
+══════════════════════════════════════════ -->
+
+<div class="page page-break">
+
+  <div class="section-label">Application</div>
+  <h2>Where Emotional Architecture applies</h2>
+
+  <p>
+    EA is sector-neutral. The emotional dimensions of human interaction are not unique to healthcare. They are present wherever people operate under pressure, wherever disclosure is partial, wherever a system's response to what it detects has real consequences for real people.
+  </p>
+
+  <div class="contexts">
+    <div class="context-item">Healthcare &amp; clinical settings</div>
+    <div class="context-item">Safety-critical operations</div>
+    <div class="context-item">Ambient voice technology</div>
+    <div class="context-item">Public &amp; social services</div>
+    <div class="context-item">Crisis response systems</div>
+    <div class="context-item">Complex operational environments</div>
+  </div>
+
+  <p style="margin-top: 28px;">
+    In each of these contexts, the cost of misread signal is not inconvenience — it is harm. Emotional Architecture provides the design language for building systems that treat the emotional climate of an encounter as primary information, not background noise.
+  </p>
+
+  <p>
+    EA was first developed and tested inside NHS neighbourhood health infrastructure. It has since been applied to ambient voice technology for clinical documentation, community triage design, and decision-support systems for frontline public services. In each context, the same question proved generative: not what does the system process, but what does it understand?
+  </p>
+
+
+  <div class="section-label" style="margin-top: 56px;">Clinical &amp; Academic Provenance</div>
+  <h2>Literature foundations</h2>
+
+  <p>
+    Each of the five EA dimensions is grounded in established clinical and academic literature. The framework is not theoretical construction — it is the formalisation of what skilled practitioners already know, made machine-applicable.
+  </p>
+
+  <h3>Tone Gradient</h3>
+  <div class="ref">Roter &amp; Hall (2006) demonstrate that affective tone predicts patient disclosure and clinical outcome independently of semantic content.</div>
+  <div class="ref">Epstein et al. (2007) identify emotional attunement as a core clinical competency with direct implications for diagnostic accuracy.</div>
+
+  <h3>Disclosure Readiness</h3>
+  <div class="ref">Neighbour (1987) identifies the closing phase of the consultation as its highest-risk moment — the point at which the patient's actual concern most often emerges.</div>
+  <div class="ref">Heritage &amp; Robinson (2006) demonstrate that patients systematically withhold primary concerns until clinician receptiveness has been assessed.</div>
+
+  <h3>Omission Topology</h3>
+  <div class="ref">Miller &amp; Rollnick (2012) theorise the speech patterns of ambivalence — hedged language, topic deflection, voluntary minimisation — as carrying clinical information distinct from stated content.</div>
+  <div class="ref">Department of Health (2007). Best Practice in Managing Risk. HMSO.</div>
+
+  <h3>Relational Load</h3>
+  <div class="ref">Bordin (1979) establishes the therapeutic alliance as a determinant of outcome with direct implications for what is communicated and what is withheld.</div>
+  <div class="ref">Hojat et al. (2011) connect clinician empathy — the capacity to read relational context — directly to measurable clinical outcomes.</div>
+
+  <h3>Temporal Pressure</h3>
+  <div class="ref">NICE (2021). Shared Decision Making. NICE Guideline NG197.</div>
+  <div class="ref">General Medical Council (2024). Good Medical Practice. GMC.</div>
+
+
+  <div class="section-label" style="margin-top: 56px;">Closing</div>
+  <h2>The design question that changes everything</h2>
+
+  <p>
+    Systems are rarely designed to cause harm. They are designed to process information, support decisions, and reduce burden. Most do this reasonably well for the majority of encounters most of the time.
+  </p>
+
+  <p>
+    The failures happen in the gaps. In the encounter where the emotional climate made the stated content misleading. In the consultation where the real concern arrived too late for the system to weight appropriately. In the moment where a pattern of omission was the most important thing in the room, and the system had no way of seeing it.
+  </p>
+
+  <p>
+    Emotional Architecture is the discipline for those gaps. It does not replace what systems already do well. It provides the interpretive layer that makes what they do safe.
+  </p>
+
+  <div class="pull-quote">
+    Understanding must come before response. Emotional Architecture is what understanding looks like as a design requirement.
+  </div>
+
+
+  <div class="doc-footer">
+    <p>
+      <strong>Mark Winterburn</strong><br>
+      Co-Director, Neighbourhood CoLab CIC<br>
+      Digital &amp; Transformation Lead, Weymouth &amp; Portland PCN
+    </p>
+    <p>
+      <a href="mailto:hello@neighbourhoodcolab.co.uk">hello@neighbourhoodcolab.co.uk</a> &nbsp;·&nbsp;
+      <a href="https://neighbourhoodcolab.co.uk">neighbourhoodcolab.co.uk</a>
+    </p>
+    <p style="margin-top: 16px; font-size: 12px;">
+      © Neighbourhood CoLab CIC, March 2026. All rights reserved.<br>
+      Emotional Architecture is original intellectual work by Neighbourhood CoLab CIC, developed through applied practice in NHS digital health transformation and community health intelligence.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
