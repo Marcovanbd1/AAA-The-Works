@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neighbourhood CoLab</title>
-<meta name="description" content="Neighbourhood CoLab builds decision infrastructure that helps systems understand people, not just process them.">
+<meta name="description" content="Neighbourhood CoLab builds the conditions for a neighbourhood to understand itself — and respond to what it finds.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -82,6 +82,15 @@ body {
   font-weight: 300;
   line-height: 1.55;
   max-width: 520px;
+  margin-bottom: 1.75rem;
+}
+
+.hero-badge {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soft);
+  font-weight: 400;
 }
 
 /* ── SECTION ── */
@@ -130,6 +139,40 @@ body {
   margin: 2rem 0;
 }
 
+/* ── STAT STRIP ── */
+
+.stat-strip {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background: var(--card);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stat-num {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
 /* ── DIMENSION CARDS ── */
 
 .dim-grid {
@@ -160,29 +203,6 @@ body {
   margin: 0;
 }
 
-/* ── TOOL BLOCKS ── */
-
-.tool-block {
-  background: var(--card);
-  border-radius: 10px;
-  padding: 1.25rem 1.5rem;
-  margin: 1rem 0;
-}
-
-.tool-name {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ink);
-  margin-bottom: 0.45rem;
-}
-
-.tool-desc {
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--mid);
-  margin: 0;
-}
-
 /* ── TEAM ── */
 
 .team-list {
@@ -203,30 +223,12 @@ body {
 
 .team-role {
   color: var(--soft);
-  min-width: 180px;
+  min-width: 240px;
   font-weight: 300;
 }
 
 .team-name {
   color: var(--ink);
-  font-weight: 400;
-}
-
-/* ── WHERE ── */
-
-.where-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1rem 0;
-}
-
-.where-tag {
-  font-size: 13px;
-  color: var(--mid);
-  background: var(--card);
-  border-radius: 100px;
-  padding: 0.3rem 0.85rem;
   font-weight: 400;
 }
 
@@ -242,18 +244,7 @@ a:hover {
   opacity: 0.6;
 }
 
-.arrow-link {
-  font-size: 15px;
-  font-weight: 400;
-  display: inline-block;
-  margin-top: 1rem;
-}
-
 /* ── FOOTER ── */
-
-.footer {
-  margin-top: 1rem;
-}
 
 .footer-close {
   font-family: 'DM Serif Display', Georgia, serif;
@@ -278,7 +269,8 @@ a:hover {
 
 @media (max-width: 480px) {
   .hero { padding: 3.5rem 0 3rem; }
-  .team-role { min-width: 130px; }
+  .team-role { min-width: 160px; }
+  .stat-strip { gap: 1.5rem; }
 }
 
 </style>
@@ -289,103 +281,145 @@ a:hover {
 
   <!-- HERO -->
   <div class="hero">
-    <p class="hero-label">Neighbourhood CoLab CIC</p>
-    <h1 class="hero-name">Applied intelligence<br>for real-world systems</h1>
-    <p class="hero-sub">The next frontier in ambient voice isn't accuracy. It's understanding.</p>
+    <p class="hero-label">Neighbourhood CoLab CIC · Isle of Portland, Dorset</p>
+    <h1 class="hero-name">Applied intelligence<br>for real-world systems.</h1>
+    <p class="hero-sub">The NHS is changing shape. Most organisations are working out what that means. We already built it.</p>
+    <p class="hero-badge">One of 43 NNHIP places nationally</p>
+  </div>
+
+
+  <!-- WHAT IS NEIGHBOURHOOD HEALTH -->
+  <div class="section">
+    <p class="label">What is neighbourhood health, actually?</p>
+
+    <p>It's not a Task and (never) Finish group.</p>
+
+    <p>It's not a pilot. It's not a procurement. It's not a platform you buy and hope people use.</p>
+
+    <p>It's what you get when a nurse, a clinical psychologist, a social worker and a philosopher all grew up in the same place — and decided to do something about it.</p>
+
+    <div class="stat-strip">
+      <div class="stat">
+        <span class="stat-num">77,000</span>
+        <span class="stat-label">Patients served</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">5</span>
+        <span class="stat-label">GP practices</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">43</span>
+        <span class="stat-label">NNHIP places nationally</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">91</span>
+        <span class="stat-label">Day pilot, live neighbourhood</span>
+      </div>
+    </div>
+
+    <p>Weymouth and Portland is end of the line. Top of all the wrong lists. One of 43 places selected for the National Neighbourhood Health Implementation Programme.</p>
+
+    <p>We didn't wait for the framework. We built the infrastructure. Then the framework arrived and described what we'd already done.</p>
   </div>
 
 
   <!-- EMOTIONAL ARCHITECTURE -->
   <div class="section">
-    <p class="label">Design discipline</p>
+    <p class="label">The design discipline</p>
 
-    <p>Every consequential human encounter has an emotional structure. That structure is itself information — it determines what a person reveals and withholds, how ambiguity is interpreted, and where risk accumulates undetected.</p>
+    <p>Emotional Architecture is a design discipline that treats the emotional climate of a human encounter as primary data. In other words: the science of what actually happened in the room.</p>
 
-    <div class="pull">Transcription is a solved problem. What actually happened in that room — what the person meant, what they didn't say — is where the field is heading.</div>
+    <p>We apply it before, during and after everything we build. It is the interpretive foundation underneath Neighbourhood Signals, Support Playlists, and every piece of infrastructure CoLab produces.</p>
 
-    <p>Emotional Architecture is the design discipline built for that question. A five-dimension framework for making emotional climate legible to systems that need to respond to it. Grounded in clinical and academic literature. Developed through applied practice inside NHS neighbourhood health infrastructure.</p>
+    <div class="pull">This is where ambient voice technology is heading. We got there through practice.</div>
+  </div>
 
-    <p>This is where ambient voice technology is heading. We got there through practice.</p>
+
+  <!-- CONDITIONS -->
+  <div class="section">
+    <p class="label">Before signals can emerge, conditions must exist</p>
+
+    <p>You can't build a listening system into a community that hasn't been given anywhere to speak.</p>
+
+    <p>Four listening apertures must exist first. Each one catches a different kind of signal — because people speak differently depending on where they feel they are.</p>
 
     <div class="dim-grid">
 
       <div class="dim-card">
-        <p class="dim-name">Tone Gradient</p>
-        <p class="dim-desc">The emotional register of an encounter — understood as a gradient that shifts throughout an interaction. Identical words carry different meaning at different points on the gradient.</p>
+        <p class="dim-name">The Peer Layer</p>
+        <p class="dim-desc">People find their voice when they see themselves reflected. A space where community speaks to community — not upward to a system, but sideways to each other. That lateral speech is some of the most honest signal a neighbourhood produces.</p>
       </div>
 
       <div class="dim-card">
-        <p class="dim-name">Disclosure Readiness</p>
-        <p class="dim-desc">The degree to which a person is prepared to reveal their actual concern. Primary disclosure frequently differs from real concern. The final moments of a consultation carry disproportionate risk.</p>
+        <p class="dim-name">The Share Layer</p>
+        <p class="dim-desc">A resource is only a resource if people can find it. When navigation is frictionless and gatekeeping is absent, people move freely — and the patterns of that movement tell you something the referral data never will.</p>
       </div>
 
       <div class="dim-card">
-        <p class="dim-name">Omission Topology</p>
-        <p class="dim-desc">The structural pattern of what is not said. Which topics are avoided. Where speech becomes vague. Omission is not absence of information — it is a signal in its own right.</p>
+        <p class="dim-name">The Private Layer</p>
+        <p class="dim-desc">Some things are only said when no one official is listening. The low-stakes, unobserved moment — a screen at midnight, a quiet corner — produces a quality of disclosure that formal channels structurally cannot reach. That's not a gap in the data. That's the most important part of it.</p>
       </div>
 
       <div class="dim-card">
-        <p class="dim-name">Relational Load</p>
-        <p class="dim-desc">The power dynamic, trust relationship, and shared history shaping what is communicated explicitly versus what is carried by context. Established relationships produce under-explicit communication that is unsafe for systems that cannot read it.</p>
-      </div>
-
-      <div class="dim-card">
-        <p class="dim-name">Temporal Pressure</p>
-        <p class="dim-desc">The encounter type and time context — first contact, crisis, discharge, routine review — and how these determine what is significant, what response is appropriate, and what the system's role should be.</p>
+        <p class="dim-name">The Hub Layer</p>
+        <p class="dim-desc">Not a showcase. Not a directory. A place that works — so people return, and in returning, leave traces. Built for utility rather than completeness, it becomes the gravity at the centre of the system.</p>
       </div>
 
     </div>
 
-    <a class="arrow-link" href="emotional-architecture-whitepaper.html" target="_blank">Read the full framework — Emotional Architecture →</a>
+    <p>We built a working version of each of these in Weymouth and Portland. You can build your own. They don't have to look like ours.</p>
+
+    <p>Build the four conditions. Then listen to what emerges.</p>
   </div>
 
 
-  <!-- HOW WE WORK / CIC -->
+  <!-- NEIGHBOURHOOD SIGNALS -->
   <div class="section">
-    <p class="label">How we work</p>
+    <p class="label">Neighbourhood Signals</p>
 
-    <p>Neighbourhood CoLab is a Community Interest Company. That is a structural choice, not an administrative detail.</p>
+    <div class="pull">A neighbourhood listening to itself.</div>
 
-    <div class="pull">No platform allegiance. No vendor incentive. We flex to what a situation requires — and get out of the way when the work is done.</div>
+    <p>When the conditions exist, signal emerges. Not extracted, not surveilled — heard.</p>
 
-    <p>Our independence is what makes us useful. We are not building a product to scale. We are building the interpretive layer that makes other systems safer and more effective.</p>
+    <p>Neighbourhood Signals is the interpretive layer that reads what the conditions have made visible. Everyday digital behaviour — searches, navigation paths, dead ends, loops, pages abandoned at midnight — turned into neighbourhood-level intelligence that Integrated Neighbourhood Teams can actually act on.</p>
+
+    <p>No names. No histories. No personal data. Everything aggregated, anonymised, pattern-level, place-based.</p>
+
+    <p>Tested through a 91-day pilot in a live neighbourhood. Three signal clusters identified and handed to the INT Partnership Group before they appeared in any clinical metric.</p>
+
+    <p>This is what ethical AI in public services looks like. Not a black box making decisions about people. A quiet infrastructure that helps a community notice itself — early enough to respond proportionately rather than reactively.</p>
   </div>
 
 
-  <!-- THE ARCHITECTURE -->
+  <!-- SUPPORT PLAYLISTS -->
   <div class="section">
-    <p class="label">In practice</p>
+    <p class="label">Support Playlists</p>
 
-    <p>Understanding must come before response. We build two capabilities that make this possible.</p>
+    <div class="pull">The What Next problem. Solved.</div>
 
-    <div class="tool-block">
-      <p class="tool-name">Neighbourhood Signals</p>
-      <p class="tool-desc">A sensing and interpretation layer that allows a system to notice patterns of need before they become visible through formal demand or performance metrics. Tested through a 91-day pilot in a live neighbourhood setting.</p>
-    </div>
+    <p>You shout it, whisper it, rant it, slur it or sob it. One shot. You say what's going on. You get a Playlist.</p>
 
-    <div class="tool-block">
-      <p class="tool-name">Support Playlists</p>
-      <p class="tool-desc">Clear next-step navigation at the exact moment people most need it — after a conversation, a discharge, or a moment of uncertainty. Clinical, social, and practical support linked into a coherent path that can be followed, adapted, and shared.</p>
-    </div>
+    <p>A calm, bespoke, sequenced set of next steps. Built from what you just said. Shaped by Emotional Architecture — designed for your actual state, not your assumed optimal one.</p>
 
-    <p style="margin-top:1.5rem; font-size:15px; color: var(--mid);">Signals help systems understand. Playlists help people act.</p>
+    <p>Not in the clinical record. Not integrated with anything. Platform agnostic by design.</p>
+
+    <p>A GP at the end of a consultation. A discharge nurse with a patient who has a folder they can't face. A community worker with someone who doesn't know where to start. A QR code on a hospital exit. On every hospital bed. On your fridge. On a pub toilet door.</p>
+
+    <div class="pull">The appointment isn't for three weeks. The QR code is still there.</div>
+
+    <p>Wherever someone stops and thinks <em>I don't know what to do next</em> — that's where a Playlist lives.</p>
   </div>
 
 
-  <!-- WHERE THIS WORKS -->
+  <!-- COPYABLE -->
   <div class="section">
-    <p class="label">Where this works</p>
+    <p class="label">This is copyable</p>
 
-    <div class="where-list">
-      <span class="where-tag">Ambient voice technology</span>
-      <span class="where-tag">Healthcare</span>
-      <span class="where-tag">Public services</span>
-      <span class="where-tag">Safety-critical operations</span>
-      <span class="where-tag">Local government</span>
-      <span class="where-tag">Complex operational environments</span>
-    </div>
+    <p>Everything here is open. The methodology. The four conditions. The tools. The sequence.</p>
 
-    <p>Any setting where conditions change faster than traditional structures can interpret — and where the cost of misread signal is not inconvenience, but harm.</p>
+    <p>We're building a series of lectures — free, public, practical — that show any neighbourhood how to create the conditions for signals to emerge, how to build the interpretive layer, and how to deploy Playlists as the response.</p>
+
+    <p>Nobody else is doing this. We are early. And we are not keeping it to ourselves.</p>
   </div>
 
 
@@ -395,15 +429,15 @@ a:hover {
 
     <div class="team-list">
       <div class="team-row">
-        <span class="team-role">Nurse</span>
+        <span class="team-role">Nurse · 25 years NHS</span>
         <span class="team-name">Lucy</span>
       </div>
       <div class="team-row">
-        <span class="team-role">Clinical psychologist</span>
+        <span class="team-role">Clinical psychologist · 25 years NHS</span>
         <span class="team-name">Bruce</span>
       </div>
       <div class="team-row">
-        <span class="team-role">Social worker</span>
+        <span class="team-role">Social worker · 25 years local authority</span>
         <span class="team-name">Justin</span>
       </div>
       <div class="team-row">
@@ -412,12 +446,43 @@ a:hover {
       </div>
     </div>
 
-    <p>We have known each other since childhood. That shared history means we work with trust, candour, and collective judgement that most organisations cannot replicate.</p>
+    <p>We have known each other since childhood. That's not a detail. That's the infrastructure.</p>
+
+    <p>Seventy-five years of combined frontline public service. A CIC — no platform allegiance, no vendor incentive. We flex to what a situation requires and get out of the way when the work is done.</p>
+  </div>
+
+
+  <!-- HOW TO WORK WITH US -->
+  <div class="section">
+    <p class="label">How to work with us</p>
+
+    <p>We are not a consultancy with a methodology to sell you. We are a CIC with a place to show you.</p>
+
+    <div class="dim-grid">
+
+      <div class="dim-card">
+        <p class="dim-name">Understand the terrain</p>
+        <p class="dim-desc">If you want to understand the new shape of neighbourhood health — we can walk you through what we built and why.</p>
+      </div>
+
+      <div class="dim-card">
+        <p class="dim-name">Find your position in it</p>
+        <p class="dim-desc">If you're an AVT platform or healthtech company navigating the NHS — we can help you understand the terrain, find your position in it, and identify where your product fits in the emerging infrastructure.</p>
+      </div>
+
+      <div class="dim-card">
+        <p class="dim-name">Build it in your neighbourhood</p>
+        <p class="dim-desc">If you want to build this where you are — we can show you how. The conditions, the tools, the sequence. All of it is copyable.</p>
+      </div>
+
+    </div>
+
+    <p>We work in short, focused engagements. No retainer required. No deck without a conversation first.</p>
   </div>
 
 
   <!-- FOOTER / CONTACT -->
-  <div class="section footer">
+  <div class="section">
     <p class="footer-close">We'd like to hear what you're building.</p>
     <div class="contact-detail">
       <a href="mailto:hello@neighbourhoodcolab.co.uk">hello@neighbourhoodcolab.co.uk</a><br>
